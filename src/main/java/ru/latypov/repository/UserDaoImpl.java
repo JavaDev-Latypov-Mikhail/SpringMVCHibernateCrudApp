@@ -1,7 +1,7 @@
-package ru.latypov.dao;
+package ru.latypov.repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 import ru.latypov.model.User;
@@ -27,9 +27,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void save(User user) {
         if (user.getId() == null || findById(user.getId()) == null) {
-            entityManager.persist(user); // Новый объект
+            entityManager.persist(user);
         } else {
-            entityManager.merge(user); // Существующий объект
+            entityManager.merge(user);
         }
     }
 

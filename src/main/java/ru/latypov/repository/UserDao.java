@@ -1,4 +1,4 @@
-package ru.latypov.dao;
+package ru.latypov.repository;
 
 import ru.latypov.model.User;
 
